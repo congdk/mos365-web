@@ -15,6 +15,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Giao diện sáng/tối: áp dụng ngay từ đầu để tránh nhấp nháy khi tải trang
+    (function () {
+      try {
+        var t = localStorage.getItem("mos365-theme");
+        if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
   <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body id="top">
@@ -30,6 +40,10 @@
         <a href="tel:0946600589">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           0946 600 589
+        </a>
+        <a class="topbar-zalo" href="https://zalo.me/0946600589" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Zalo
         </a>
         <a class="topbar-mail" href="mailto:congdk.dev@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6L22 7"/></svg>
@@ -55,6 +69,10 @@
         <a href="#dang-ky">Liên hệ</a>
         <a class="btn btn-primary btn-sm nav-cta" href="#dang-ky">Đăng ký ngay</a>
       </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Chuyển sang giao diện tối" aria-pressed="false" title="Bật/tắt giao diện sáng — tối">
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.4 5.4l1.7 1.7M16.9 16.9l1.7 1.7M18.6 5.4l-1.7 1.7M7.1 16.9l-1.7 1.7"/></svg>
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 14.5A8.5 8.5 0 1 1 9.5 3.8a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+      </button>
       <button class="nav-toggle" id="navToggle" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
         <span></span><span></span><span></span>
       </button>
@@ -63,6 +81,94 @@
   <div class="nav-overlay" id="navOverlay" hidden></div>
 
   <main>
+    <!-- ===== Đăng ký ===== -->
+    <section class="register" id="dang-ky">
+      <div class="container register-grid">
+        <div class="register-copy reveal">
+          <span class="eyebrow eyebrow-light">Đăng ký học &amp; thi</span>
+          <h2>Đăng ký học và thi MOS tại đây</h2>
+          <p class="price-callout">Lệ phí thi MOS ưu đãi chỉ</p>
+          <p class="price-big">650K<span>/môn</span></p>
+          <ul class="check-list check-list-light">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Phần mềm mô phỏng đề thi thật, chấm điểm tự động
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Cam kết 100% học viên đạt chứng chỉ MOS
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Hỗ trợ giải đáp thắc mắc 24/7
+            </li>
+          </ul>
+          <div class="register-contact">
+            <a href="tel:0946600589" class="btn btn-white">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Hotline: 0946 600 589
+            </a>
+            <a href="https://zalo.me/0946600589" class="btn btn-zalo" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              Zalo: 0946 600 589
+            </a>
+            <a href="mailto:congdk.dev@gmail.com" class="btn btn-outline-light">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6L22 7"/></svg>
+              congdk.dev@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <form class="register-form reveal" id="registerForm" novalidate>
+          <h3>Phiếu đăng ký học</h3>
+          <p class="form-sub">Điền thông tin bên dưới, chúng tôi sẽ liên hệ tư vấn miễn phí.</p>
+
+          <div class="field">
+            <label for="fname">Họ và tên <em>*</em></label>
+            <input id="fname" name="name" type="text" placeholder="Nguyễn Văn A" autocomplete="name" required>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="femail">Email <em>*</em></label>
+              <input id="femail" name="email" type="email" placeholder="email@example.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="fphone">Số điện thoại <em>*</em></label>
+              <input id="fphone" name="phone" type="tel" placeholder="09xx xxx xxx" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <fieldset class="field">
+            <legend>Chọn phiên bản MOS</legend>
+            <div class="chip-group">
+              <label class="chip"><input type="radio" name="version" value="2019"><span>2019</span></label>
+              <label class="chip"><input type="radio" name="version" value="365"><span>365</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Chọn khóa học bạn quan tâm</legend>
+            <div class="chip-group">
+              <label class="chip"><input type="checkbox" name="course" value="MOS WORD 2019/365"><span>MOS Word</span></label>
+              <label class="chip"><input type="checkbox" name="course" value="MOS EXCEL 2019/365"><span>MOS Excel</span></label>
+              <label class="chip"><input type="checkbox" name="course" value="MOS POWERPOINT 2019/365"><span>MOS PowerPoint</span></label>
+              <label class="chip"><input type="checkbox" name="course" value="MOS WORD EXPERT 2019/365"><span>MOS Word Expert</span></label>
+              <label class="chip"><input type="checkbox" name="course" value="MOS EXCEL EXPERT 2019/365"><span>MOS Excel Expert</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="fnote">Ghi chú</label>
+            <textarea id="fnote" name="message" rows="3" placeholder="Ví dụ: muốn thi trong tháng 11, cần tư vấn lộ trình..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Đăng ký ngay</button>
+          <p class="form-note">Chúng tôi sẽ liên hệ xác nhận trong vòng 24 giờ làm việc.</p>
+        </form>
+      </div>
+    </section>
+
     <!-- ===== Hero ===== -->
     <section class="hero">
       <div class="container hero-grid">
@@ -263,7 +369,7 @@
         <div class="about-media reveal">
           <div class="screen-frame">
             <div class="screen-bar"><i></i><i></i><i></i></div>
-            <img src="assets/images/soft-screen1.png" alt="Phần mềm luyện thi MOS — danh sách bài luyện, kết quả và chuyên đề ôn tập">
+            <img src="assets/images/giaodienmos.png" alt="Phần mềm MOS365 — danh sách bài luyện thi Word, Excel, PowerPoint kèm điểm thi thử, số lần học và kết quả theo bài luyện" loading="lazy">
           </div>
           <div class="float-card chip-1">
             <span class="ico ico-green">
@@ -329,13 +435,13 @@
           </div>
           <div class="screen-stage">
             <figure class="screen active" data-screen="word">
-              <img src="assets/images/grading1.png" alt="Luyện đề MOS Word — đề Dinosaurs! với đồng hồ đếm ngược và nút chấm điểm">
+              <img src="assets/images/grading1.png" alt="Luyện đề MOS Word — tài liệu Lake Vacations với đồng hồ đếm ngược 149:54 và nút chấm điểm" loading="lazy">
             </figure>
             <figure class="screen" data-screen="excel">
-              <img src="assets/images/grading2.png" alt="Luyện đề MOS Excel — bảng dữ liệu Tracker với đồng hồ đếm ngược và nút chấm điểm">
+              <img src="assets/images/grading2.png" alt="Luyện đề MOS Excel — bảng Orders với PivotTable nhóm hàng, đồng hồ đếm ngược 149:57 và nút chấm điểm" loading="lazy">
             </figure>
             <figure class="screen" data-screen="powerpoint">
-              <img src="assets/images/grading3.png" alt="Luyện đề MOS PowerPoint — slide Profit by Department với đồng hồ đếm ngược và nút chấm điểm">
+              <img src="assets/images/grading3.png" alt="Luyện đề MOS PowerPoint — slide Vacation Plan với đồng hồ đếm ngược 149:56 và nút chấm điểm" loading="lazy">
             </figure>
             <p class="screen-caption" id="screenCaption">MOS Word 2019/365 — đề thi thật, đồng hồ đếm ngược, nút “Chấm điểm” và “Khuyến nghị” như phòng thi.</p>
           </div>
@@ -345,64 +451,119 @@
 
     <!-- ===== Video giới thiệu ===== -->
     <section class="video-section" id="video">
-      <div class="container video-grid">
-        <div class="video-copy reveal">
-          <span class="eyebrow eyebrow-light">Video giới thiệu</span>
-          <h2>Học viên trải nghiệm <span class="grad-text">phần mềm luyện thi MOS</span></h2>
-          <p class="video-lead">Xem video thực tế: bạn sinh viên UEH giới thiệu cách học, cách luyện đề và nhận điểm chấm tự động ngay tại nhà cùng phần mềm MOS365.</p>
-          <ul class="check-list check-list-light">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Giao diện làm bài mô phỏng như phòng thi thật
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Nộp bài là có điểm — chấm điểm tự động từng tác vụ
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Xem khuyến nghị đủ năng lực trước khi đăng ký thi
-            </li>
-          </ul>
-          <div class="video-cta">
-            <a href="#dang-ky" class="btn btn-primary btn-lg">
-              Đăng ký học ngay
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="tel:0946600589" class="btn btn-outline-light btn-lg">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Tư vấn miễn phí
-            </a>
-          </div>
-        </div>
+      <div class="container video-head reveal">
+        <span class="eyebrow eyebrow-light">Video giới thiệu</span>
+        <h2>Học viên trải nghiệm <span class="grad-text">phần mềm luyện thi MOS</span></h2>
+        <p class="video-lead">Xem video thực tế: bạn sinh viên UEH giới thiệu cách học, cách luyện đề và nhận điểm chấm tự động ngay tại nhà cùng phần mềm MOS365.</p>
+      </div>
 
-        <div class="video-media reveal">
-          <div class="video-phone">
-            <div class="video-wrap">
-              <video id="introVideo" poster="assets/images/video-poster.jpg" preload="none" playsinline controls>
-                <source src="assets/mos-gioi-thieu.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ phát video.
-              </video>
-              <button type="button" class="video-overlay" id="videoOverlay" aria-label="Phát video giới thiệu">
-                <span class="play-btn">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg>
-                </span>
-                <span class="play-label">Xem video giới thiệu</span>
-                <span class="play-meta">69 giây · Vlog sinh viên UEH</span>
-              </button>
+      <div class="video-media reveal">
+          <div class="video-stage">
+            <div class="video-phone">
+              <span class="phone-btn phone-btn-mute" aria-hidden="true"></span>
+              <span class="phone-btn phone-btn-vol" aria-hidden="true"></span>
+              <span class="phone-btn phone-btn-power" aria-hidden="true"></span>
+              <div class="video-wrap">
+                <video id="introVideo" poster="assets/images/video-poster.jpg" preload="none" playsinline controls>
+                  <source src="assets/mos-gioi-thieu.mp4" type="video/mp4">
+                  Trình duyệt của bạn không hỗ trợ phát video.
+                </video>
+                <button type="button" class="video-overlay" id="videoOverlay" aria-label="Phát video giới thiệu">
+                  <span class="overlay-pill overlay-dur">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                    1:09
+                  </span>
+                  <span class="overlay-pill overlay-water">
+                    <span class="water-mark" aria-hidden="true">M</span>
+                    MOS365
+                  </span>
+                  <span class="play-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg>
+                  </span>
+                  <span class="play-label">Xem video giới thiệu</span>
+                  <span class="play-meta">69 giây · Vlog sinh viên UEH</span>
+                  <span class="overlay-bar" aria-hidden="true">
+                    <span class="ob-time">0:00</span>
+                    <span class="ob-track"><i></i></span>
+                    <span class="ob-time">1:09</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="float-card chip-dark chip-video-1">
+              <span class="ico ico-accent">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+              </span>
+              <span>Thao tác trên <b>Word, Excel, PowerPoint</b> thật</span>
+            </div>
+            <div class="float-card chip-dark chip-video-2">
+              <span class="ico ico-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </span>
+              <span><b>Chấm điểm tự động</b> sau khi nộp</span>
             </div>
           </div>
-          <div class="float-card chip-dark chip-video-1">
-            <span class="ico ico-accent">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-            </span>
-            <span>Thao tác trên Word, Excel, PowerPoint thật</span>
+      </div>
+
+      <div class="container video-body reveal">
+        <ul class="check-list check-list-light video-points">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Giao diện làm bài mô phỏng như phòng thi thật
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Nộp bài là có điểm — chấm điểm tự động từng tác vụ
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Xem khuyến nghị đủ năng lực trước khi đăng ký thi
+          </li>
+        </ul>
+
+        <div class="video-cta">
+          <a href="#dang-ky" class="btn btn-primary btn-lg">
+            Đăng ký học ngay
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:0946600589" class="btn btn-outline-light btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Tư vấn miễn phí
+          </a>
+        </div>
+
+        <div class="video-facts">
+          <div class="vfact">
+            <b>600+</b>
+            <span>Video hướng dẫn chi tiết</span>
           </div>
-          <div class="float-card chip-dark chip-video-2">
-            <span class="ico ico-green">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </span>
-            <span>Chấm điểm tự động sau khi nộp</span>
+          <div class="vfact">
+            <b>500+</b>
+            <span>File dữ liệu thực hành</span>
+          </div>
+          <div class="vfact">
+            <b>24/7</b>
+            <span>Hỗ trợ giải đáp mọi lúc</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <span>Mô phỏng đề thi thật</span><i>✦</i>
+            <span>Chấm điểm tự động</span><i>✦</i>
+            <span>600+ video hướng dẫn</span><i>✦</i>
+            <span>500+ file thực hành</span><i>✦</i>
+            <span>Hỗ trợ 24/7</span><i>✦</i>
+          </div>
+          <div class="marquee-group">
+            <span>Mô phỏng đề thi thật</span><i>✦</i>
+            <span>Chấm điểm tự động</span><i>✦</i>
+            <span>600+ video hướng dẫn</span><i>✦</i>
+            <span>500+ file thực hành</span><i>✦</i>
+            <span>Hỗ trợ 24/7</span><i>✦</i>
           </div>
         </div>
       </div>
@@ -485,89 +646,6 @@
       </div>
     </section>
 
-    <!-- ===== Đăng ký ===== -->
-    <section class="register" id="dang-ky">
-      <div class="container register-grid">
-        <div class="register-copy reveal">
-          <span class="eyebrow eyebrow-light">Đăng ký học &amp; thi</span>
-          <h2>Đăng ký học và thi MOS tại đây</h2>
-          <p class="price-callout">Lệ phí thi MOS ưu đãi chỉ</p>
-          <p class="price-big">650K<span>/môn</span></p>
-          <ul class="check-list check-list-light">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Phần mềm mô phỏng đề thi thật, chấm điểm tự động
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Cam kết 100% học viên đạt chứng chỉ MOS
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              Hỗ trợ giải đáp thắc mắc 24/7
-            </li>
-          </ul>
-          <div class="register-contact">
-            <a href="tel:0946600589" class="btn btn-white">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Hotline: 0946 600 589
-            </a>
-            <a href="mailto:congdk.dev@gmail.com" class="btn btn-outline-light">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6L22 7"/></svg>
-              congdk.dev@gmail.com
-            </a>
-          </div>
-        </div>
-
-        <form class="register-form reveal" id="registerForm" novalidate>
-          <h3>Phiếu đăng ký học</h3>
-          <p class="form-sub">Điền thông tin bên dưới, chúng tôi sẽ liên hệ tư vấn miễn phí.</p>
-
-          <div class="field">
-            <label for="fname">Họ và tên <em>*</em></label>
-            <input id="fname" name="name" type="text" placeholder="Nguyễn Văn A" autocomplete="name" required>
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label for="femail">Email <em>*</em></label>
-              <input id="femail" name="email" type="email" placeholder="email@example.com" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="fphone">Số điện thoại <em>*</em></label>
-              <input id="fphone" name="phone" type="tel" placeholder="09xx xxx xxx" autocomplete="tel" required>
-            </div>
-          </div>
-
-          <fieldset class="field">
-            <legend>Chọn phiên bản MOS</legend>
-            <div class="chip-group">
-              <label class="chip"><input type="radio" name="version" value="2019"><span>2019</span></label>
-              <label class="chip"><input type="radio" name="version" value="365"><span>365</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="field">
-            <legend>Chọn khóa học bạn quan tâm</legend>
-            <div class="chip-group">
-              <label class="chip"><input type="checkbox" name="course" value="MOS WORD 2019/365"><span>MOS Word</span></label>
-              <label class="chip"><input type="checkbox" name="course" value="MOS EXCEL 2019/365"><span>MOS Excel</span></label>
-              <label class="chip"><input type="checkbox" name="course" value="MOS POWERPOINT 2019/365"><span>MOS PowerPoint</span></label>
-              <label class="chip"><input type="checkbox" name="course" value="MOS WORD EXPERT 2019/365"><span>MOS Word Expert</span></label>
-              <label class="chip"><input type="checkbox" name="course" value="MOS EXCEL EXPERT 2019/365"><span>MOS Excel Expert</span></label>
-            </div>
-          </fieldset>
-
-          <div class="field">
-            <label for="fnote">Ghi chú</label>
-            <textarea id="fnote" name="message" rows="3" placeholder="Ví dụ: muốn thi trong tháng 11, cần tư vấn lộ trình..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Đăng ký ngay</button>
-          <p class="form-note">Chúng tôi sẽ liên hệ xác nhận trong vòng 24 giờ làm việc.</p>
-        </form>
-      </div>
-    </section>
   </main>
 
   <!-- ===== Footer ===== -->
@@ -609,6 +687,10 @@
             <a href="tel:0946600589">Hotline: 0946 600 589</a>
           </li>
           <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <a href="https://zalo.me/0946600589" target="_blank" rel="noopener">Zalo: 0946 600 589</a>
+          </li>
+          <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6L22 7"/></svg>
             <a href="mailto:congdk.dev@gmail.com">congdk.dev@gmail.com</a>
           </li>
@@ -627,6 +709,9 @@
   </footer>
 
   <!-- ===== Nút nổi ===== -->
+  <a href="https://zalo.me/0946600589" class="float-zalo" target="_blank" rel="noopener" aria-label="Chat Zalo 0946 600 589">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
   <a href="tel:0946600589" class="float-call" aria-label="Gọi hotline 0946 600 589">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>

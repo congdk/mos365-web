@@ -226,4 +226,43 @@
       form.reset();
     });
   }
+
+  /* ---------- Giao diện sáng / tối ---------- */
+  var themeToggle = document.getElementById("themeToggle");
+  var rootEl = document.documentElement;
+  var metaTheme = document.querySelector('meta[name="theme-color"]');
+
+  function applyTheme(theme) {
+    var dark = theme === "dark";
+    if (dark) rootEl.setAttribute("data-theme", "dark");
+    else rootEl.removeAttribute("data-theme");
+    if (metaTheme) metaTheme.setAttribute("content", dark ? "#0b1220" : "#0c2249");
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", String(dark));
+      themeToggle.setAttribute("aria-label", dark ? "Chuyển sang giao diện sáng" : "Chuyển sang giao diện tối");
+    }
+  }
+
+  function savedTheme() {
+    try { return localStorage.getItem("mos365-theme"); } catch (e) { return null; }
+  }
+
+  var mediaDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  applyTheme(savedTheme() || (mediaDark && mediaDark.matches ? "dark" : "light"));
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      var next = rootEl.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      try { localStorage.setItem("mos365-theme", next); } catch (e) {}
+      applyTheme(next);
+    });
+  }
+
+  if (mediaDark) {
+    var onSchemeChange = function (e) {
+      if (!savedTheme()) applyTheme(e.matches ? "dark" : "light");
+    };
+    if (mediaDark.addEventListener) mediaDark.addEventListener("change", onSchemeChange);
+    else if (mediaDark.addListener) mediaDark.addListener(onSchemeChange);
+  }
 })();
